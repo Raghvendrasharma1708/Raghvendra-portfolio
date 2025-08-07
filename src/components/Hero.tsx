@@ -59,10 +59,7 @@ const Hero = () => {
             {/* Enhanced bio with better typography */}
             <div className="space-y-6">
               <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl font-light">
-                I'm a passionate Full Stack Developer skilled in the 
-                <span className="text-primary font-medium"> MERN stack</span>, with experience in 
-                <span className="text-accent font-medium"> modern web technologies</span> including 
-                React, Node.js, TypeScript, and cutting-edge animation libraries like GSAP and Framer Motion.
+                Full-stack prodigy specializing in <span className="text-primary font-medium">MERN Stack</span>, dedicated to crafting robust, scalable, and engaging web applications. Merging performance and passion, I deliver <span className="text-accent font-medium">impactful solutions</span> that inspire and connect.
               </p>
               
               {/* Tech stack tags */}
