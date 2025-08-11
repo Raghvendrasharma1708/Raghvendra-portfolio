@@ -3,8 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Linkedin, Github, Send, MapPin } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { useRef, useState, type FormEvent } from "react";
+import { useToast } from "@/components/ui/use-toast";
+const EMAILJS_SERVICE_ID = "service_x8z4c9y";
+const EMAILJS_TEMPLATE_ID = "template_ftgudws";
+const EMAILJS_PUBLIC_KEY = "bvvYBLbwD7CEiWCce";
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
   const contactInfo = [
     {
       icon: Mail,
@@ -36,12 +46,41 @@ const Contact = () => {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you would typically handle form submission
-    console.log("Form submitted");
-  };
+    if (!formRef.current) return;
 
+    const formData = new FormData(formRef.current);
+    const honey = formData.get("hp_field");
+    if (honey) {
+      // silently ignore bots
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+      toast({
+        title: "Message sent successfully",
+        description: "Thanks! I’ll get back to you shortly.",
+      });
+      formRef.current.reset();
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again later or email me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section id="contact" className="py-20 bg-gradient-dark">
       <div className="container mx-auto px-4">
@@ -105,50 +144,39 @@ const Contact = () => {
 
           {/* Contact Form */}
           <Card className="card-tech">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <h3 className="text-2xl font-semibold mb-6">Send Message</h3>
+              {/* Honeypot field to reduce spam */}
+              <input type="text" name="hp_field" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Name</label>
-                  <Input 
-                    placeholder="Your name" 
-                    className="bg-muted border-card-border focus:border-primary"
-                  />
+                  <label className="text-sm font-medium" htmlFor="from_name">Name</label>
+                  <Input id="from_name" name="from_name" placeholder="Your name" className="bg-muted border-card-border focus:border-primary" required />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Email</label>
-                  <Input 
-                    type="email" 
-                    placeholder="your.email@example.com" 
-                    className="bg-muted border-card-border focus:border-primary"
-                  />
+                  <label className="text-sm font-medium" htmlFor="from_email">Email</label>
+                  <Input id="from_email" name="from_email" type="email" placeholder="your.email@example.com" className="bg-muted border-card-border focus:border-primary" required />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium">Subject</label>
-                <Input 
-                  placeholder="Project inquiry" 
-                  className="bg-muted border-card-border focus:border-primary"
-                />
+                <label className="text-sm font-medium" htmlFor="subject">Subject</label>
+                <Input id="subject" name="subject" placeholder="Project inquiry" className="bg-muted border-card-border focus:border-primary" required />
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium">Message</label>
-                <Textarea 
-                  placeholder="Tell me about your project..." 
-                  rows={6}
-                  className="bg-muted border-card-border focus:border-primary resize-none"
-                />
+                <label className="text-sm font-medium" htmlFor="message">Message</label>
+                <Textarea id="message" name="message" placeholder="Tell me about your project..." rows={6} className="bg-muted border-card-border focus:border-primary resize-none" required />
               </div>
 
               <Button 
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full gradient-primary text-primary-foreground font-semibold py-3 glow hover:glow-lg transition-smooth"
               >
                 <Send className="w-4 h-4 mr-2" />
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>
