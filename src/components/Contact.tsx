@@ -11,7 +11,7 @@ const EMAILJS_TEMPLATE_ID = "template_ftgudws";
 const EMAILJS_PUBLIC_KEY = "bvvYBLbwD7CEiWCce";
 
 const Contact = () => {
-  const formRef = useRef<HTMLFormElement>(null);
+  const contactFormRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -48,9 +48,9 @@ const Contact = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formRef.current) return;
+    if (!contactFormRef.current) return;
 
-    const formData = new FormData(formRef.current);
+    const formData = new FormData(contactFormRef.current);
     const honey = formData.get("hp_field");
     if (honey) {
       // silently ignore bots
@@ -62,14 +62,14 @@ const Contact = () => {
       await emailjs.sendForm(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        formRef.current,
+        contactFormRef.current,
         { publicKey: EMAILJS_PUBLIC_KEY }
       );
       toast({
         title: "Message sent successfully",
         description: "Thanks! I’ll get back to you shortly.",
       });
-      formRef.current.reset();
+      contactFormRef.current.reset();
     } catch (error) {
       console.error("EmailJS error:", error);
       toast({
@@ -144,7 +144,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <Card className="card-tech">
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+            <form ref={contactFormRef} onSubmit={handleSubmit} className="space-y-6">
               <h3 className="text-2xl font-semibold mb-6">Send Message</h3>
               {/* Honeypot field to reduce spam */}
               <input type="text" name="hp_field" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
