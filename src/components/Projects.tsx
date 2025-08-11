@@ -122,11 +122,19 @@ const Projects = () => {
         {/* View All Projects Button */}
         <div className="text-center mt-12">
           <Button
+            asChild
             variant="outline"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3"
           >
-            View All Projects on GitHub
-            <ExternalLink className="w-4 h-4 ml-2" />
+            <a
+              href="https://github.com/Raghvendrasharma1708"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View all projects on GitHub - opens in a new tab"
+            >
+              View All Projects on GitHub
+              <ExternalLink className="w-4 h-4 ml-2" />
+            </a>
           </Button>
         </div>
       </div>
