@@ -7,7 +7,7 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState, type FormEvent } from "react";
 import { useToast } from "@/components/ui/use-toast";
 const EMAILJS_SERVICE_ID = "service_x8z4c9y";
-const EMAILJS_TEMPLATE_ID = "template_ftgudws";
+const EMAILJS_TEMPLATE_ID = "template_eqvki9x";
 const EMAILJS_PUBLIC_KEY = "bvvYBLbwD7CEiWCce";
 
 const Contact = () => {
