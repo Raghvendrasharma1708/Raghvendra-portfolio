@@ -1,5 +1,8 @@
 # Welcome to your Lovable project
 
+#Deployed project Successfully through Netlify 
+So the deployed link - (" https://raghvendra-portfolio.lovable.app/ ")
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/72f214be-1e13-4514-8aa2-1599e0e84bec
