@@ -1,7 +1,11 @@
 # Welcome to your Lovable project
 
 #Deployed project Successfully through Netlify 
-So the deployed link - (" https://raghvendra-portfolio.lovable.app/ ")
+So the deployed link -
+ (" https://raghvendra-portfolio.lovable.app/ ")
+And 
+ ("https://raghvendraportfoliosite.netlify.app/")
+
 
 ## Project info
 
