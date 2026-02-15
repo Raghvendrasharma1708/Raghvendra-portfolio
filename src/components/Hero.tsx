@@ -50,31 +50,29 @@ const Hero = () => {
               {/* Role with typing effect styling */}
               <div className="relative">
                 <p className="text-2xl lg:text-3xl font-medium text-muted-foreground">
-                  Full Stack Developer
+                  Data Scientist | Data Analyst
                 </p>
                 <div className="absolute top-0 right-0 w-1 h-full bg-primary animate-pulse" />
               </div>
             </div>
 
             {/* Enhanced bio with better typography */}
-            <div className="space-y-6">
-              <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl font-light">
-                Full-stack prodigy specializing in <span className="text-primary font-medium">MERN Stack</span>, dedicated to crafting robust, scalable, and engaging web applications. Merging performance and passion, I deliver <span className="text-accent font-medium">impactful solutions</span> that inspire and connect.
-              </p>
+            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl font-light">
+              Transforming complex data into strategic insights and predictive models. Specializing in <span className="text-primary font-medium">Machine Learning, SQL, and Python</span> to solve business problems through advanced analytics and <span className="text-accent font-medium">data-driven solutions</span>.
+                </p>
               
               {/* Tech stack tags */}
-              <div className="flex flex-wrap gap-2">
-                {['React', 'Node.js', 'MongoDB', 'TypeScript', 'Tailwind'].map((tech, index) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full border border-primary/20 animate-fade-in"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+             <div className="flex flex-wrap gap-2">
+  {['Python', 'SQL', 'Machine Learning', 'Power BI', 'Scikit-learn','Numpy', 'Pandas',"Data Cleaning"].map((tech, index) => (
+    <span
+      key={tech}
+      className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full border border-primary/20 animate-fade-in"
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
+      {tech}
+    </span>
+  ))}
+</div>
 
             {/* Enhanced CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -105,10 +103,10 @@ const Hero = () => {
               {/* Image container with enhanced styling */}
               <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl animate-float group-hover:border-primary/50 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/10" />
-                <img
-                  src={profilePhoto}
-                  alt="Raghvendra Sharma - Full Stack Developer"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+               <img
+                src={profilePhoto}
+                alt="Raghvendra Sharma - Data Scientist & Data Analyst"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 
                 {/* Overlay effect */}
