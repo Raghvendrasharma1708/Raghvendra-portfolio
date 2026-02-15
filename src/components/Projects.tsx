@@ -30,7 +30,7 @@ const Projects = () => {
       title: "Supply Chain Analytics & Automation",
       subtitle: "ETL Pipeline & Real-time KPI Tracking",
       description: "Automated end-to-end supply chain analytics system with n8n workflows. Tracks 8 critical KPIs including line fill rate, OTIF, and inventory turnover. Achieved 99% data accuracy and 40% reduction in data cleaning time.",
-      techStack: ["N8N", "Quadratic AI", "SQL", "PostgreSQL", "Power BI", "Python"],
+      techStack: ["N8N", "Quadratic AI", "SQL", "PostgreSQL", "Python"],
       features: ["Automated ETL Pipeline", "Real-time KPI Tracking", "99% Data Accuracy", "Multi-source Integration"],
       icon: Database,
       gradient: "from-primary to-purple-500",
@@ -54,16 +54,13 @@ const Projects = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card key={index} className="card-tech group relative overflow-hidden">
-              {/* Background decoration */}
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${project.gradient} opacity-10 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500`} />
               
               <div className="relative z-10">
-                {/* Project Icon */}
                 <div className={`w-16 h-16 mb-6 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                   <project.icon className="w-8 h-8 text-white" />
                 </div>
 
-                {/* Project Info */}
                 <div className="space-y-4 mb-6">
                   <div>
                     <h3 className="text-xl font-bold mb-1">{project.title}</h3>
@@ -75,7 +72,6 @@ const Projects = () => {
                   </p>
                 </div>
 
-                {/* Features */}
                 <div className="mb-6">
                   <h4 className="text-sm font-semibold text-primary mb-3">Key Features</h4>
                   <div className="grid grid-cols-2 gap-2">
@@ -87,7 +83,6 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Tech Stack */}
                 <div className="mb-6">
                   <h4 className="text-sm font-semibold text-primary mb-3">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
@@ -102,7 +97,6 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
                 <div className="flex gap-3">
                   <Button
                     asChild
@@ -119,44 +113,27 @@ const Projects = () => {
                       Code
                     </a>
                   </Button>
-                  {project.liveUrl ? (
-                    <Button
-                      asChild
-                      size="sm"
-                      className="flex-1 gradient-primary text-primary-foreground"
+                  
+                  <Button
+                    asChild
+                    size="sm"
+                    className="flex-1 gradient-primary text-primary-foreground"
+                  >
+                    
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
-                      </a>
-                    </Button>
-                  ) : (
-                    <Button
-                      asChild
-                      size="sm"
-                      className="flex-1 gradient-primary text-primary-foreground"
-                    >
-                      
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        View Project
-                      </a>
-                    </Button>
-                  )}
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View Project
+                    </a>
+                  </Button>
                 </div>
               </div>
             </Card>
           ))}
         </div>
 
-        {/* View All Projects Button */}
         <div className="text-center mt-12">
           <Button
             asChild
