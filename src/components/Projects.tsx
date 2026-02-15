@@ -98,7 +98,8 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  
+                  {/* FIX 1: Added missing opening <a tag */}
+                  <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -114,8 +115,9 @@ const Projects = () => {
                     </Button>
                   </a>
                   
-                  
-                    href={project.githubUrl}
+                  {/* FIX 2: Added missing opening <a tag */}
+                  <a
+                    href={project.githubUrl} 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1"
@@ -135,7 +137,8 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          
+          {/* FIX 3: Added missing opening <a tag */}
+          <a
             href="https://github.com/Raghvendrasharma1708"
             target="_blank"
             rel="noopener noreferrer"
