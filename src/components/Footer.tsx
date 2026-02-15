@@ -14,7 +14,7 @@ const Footer = () => {
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/raghvendra-sharma-2a025a308",
+      href: "https://linkedin.com/in/raghvendra-sharma-ms",
       label: "LinkedIn"
     },
     {
@@ -31,7 +31,7 @@ const Footer = () => {
           {/* Logo/Name */}
           <div>
             <h3 className="text-2xl font-bold text-gradient">Raghvendra Sharma</h3>
-            <p className="text-muted-foreground mt-2">Full Stack Developer</p>
+            <p className="text-muted-foreground mt-2">Data Scientist | Data Analyst </p>
           </div>
 
           {/* Social Links */}
