@@ -6,7 +6,7 @@ const About = () => {
     {
       company: "iSkylar Technologies",
       location: "Jaipur",
-      role: "Full Stack Developer",
+      role: "Business Analytics Intern",
       type: "On-site",
       period: "June–Aug 2025",
       icon: Building,
