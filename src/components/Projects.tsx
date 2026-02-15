@@ -98,36 +98,36 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
                   >
-                    
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                     >
                       <Github className="w-4 h-4 mr-2" />
                       Code
-                    </a>
-                  </Button>
+                    </Button>
+                  </a>
                   
-                  <Button
-                    asChild
-                    size="sm"
-                    className="flex-1 gradient-primary text-primary-foreground"
+                  
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
                   >
-                    
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Button
+                      size="sm"
+                      className="w-full gradient-primary text-primary-foreground"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       View Project
-                    </a>
-                  </Button>
+                    </Button>
+                  </a>
                 </div>
               </div>
             </Card>
@@ -135,21 +135,19 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button
-            asChild
-            variant="outline"
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3"
+          
+            href="https://github.com/Raghvendrasharma1708"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            
-              href="https://github.com/Raghvendrasharma1708"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View all projects on GitHub - opens in a new tab"
+            <Button
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3"
             >
               View All Projects on GitHub
               <ExternalLink className="w-4 h-4 ml-2" />
-            </a>
-          </Button>
+            </Button>
+          </a>
         </div>
       </div>
     </section>
