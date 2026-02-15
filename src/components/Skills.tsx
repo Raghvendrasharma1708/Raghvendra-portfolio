@@ -2,8 +2,8 @@ import { Card } from "@/components/ui/card";
 import { 
   Code, 
   Database, 
-  Globe, 
-  Smartphone, 
+  BarChart3, 
+  Brain, 
   Users, 
   Lightbulb,
   MessageCircle,
@@ -13,51 +13,51 @@ import {
 const Skills = () => {
   const technicalSkills = [
     {
-      category: "Programming Languages",
-      skills: ["Java", "JavaScript", "Python", "TypeScript"],
+      category: "Programming & Analytics",
+      skills: ["Python", "SQL", "Advanced Excel", "R"],
       icon: Code,
       color: "text-primary"
     },
     {
-      category: "Frontend",
-      skills: ["React", "HTML", "CSS", "Tailwind CSS"],
-      icon: Globe,
+      category: "Data Visualization & BI",
+      skills: ["Power BI", "Tableau", "DAX", "Matplotlib"],
+      icon: BarChart3,
       color: "text-secondary"
     },
     {
-      category: "Backend",
-      skills: ["Node.js", "Express", "MongoDB", "SQL"],
-      icon: Database,
+      category: "Machine Learning & Statistics",
+      skills: ["Scikit-learn", "Pandas", "NumPy", "PySpark"],
+      icon: Brain,
       color: "text-primary"
     },
     {
-      category: "Tools & Libraries",
-      skills: ["GSAP", "Framer Motion", "Socket.IO"],
-      icon: Smartphone,
+      category: "ETL & Data Engineering",
+      skills: ["PostgreSQL", "MySQL", "Git", "n8n"],
+      icon: Database,
       color: "text-secondary"
     }
   ];
 
   const softSkills = [
     {
-      name: "Communication",
+      name: "Data Storytelling",
       icon: MessageCircle,
-      description: "Clear and effective communication with team members and clients"
+      description: "Translating complex datasets into actionable business recommendations"
     },
     {
-      name: "Problem-solving",
+      name: "Analytical Thinking",
       icon: Lightbulb,
-      description: "Analytical thinking and creative solutions to complex challenges"
+      description: "Problem-solving through statistical analysis and data-driven approaches"
     },
     {
-      name: "Teamwork",
+      name: "Cross-Functional Collaboration",
       icon: Users,
-      description: "Collaborative approach and ability to work well in diverse teams"
+      description: "Working with stakeholders to align analytics with business objectives"
     },
     {
-      name: "Goal-oriented",
+      name: "Results-Driven",
       icon: Target,
-      description: "Focused on delivering high-quality results within deadlines"
+      description: "Focused on delivering measurable impact through data insights and KPIs"
     }
   ];
 
@@ -69,7 +69,7 @@ const Skills = () => {
             My <span className="text-gradient">Skills</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive set of technical and soft skills that enable me to build robust, scalable applications
+            A comprehensive set of technical and analytical skills enabling data-driven decision making and predictive modeling
           </p>
         </div>
 
