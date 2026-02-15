@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Code, Palette, Zap, Check } from "lucide-react";
+import { Database, Check } from "lucide-react";
 
 const Services = () => {
   const scrollToSection = (sectionId: string) => {
@@ -11,12 +11,12 @@ const Services = () => {
   };
 
   const features = [
-    "Custom website development",
-    "Responsive design for all devices",
-    "Modern UI/UX with latest technologies",
-    "Performance optimization",
-    "SEO-friendly implementation",
-    "Maintenance and support"
+    "Data modeling & database design",
+    "SQL-based analysis & optimization",
+    "Power BI/Tableau dashboard development",
+    "ETL pipeline automation",
+    "Predictive modeling & machine learning",
+    "Statistical analysis & KPI tracking"
   ];
 
   return (
@@ -27,7 +27,7 @@ const Services = () => {
             My <span className="text-gradient">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Specialized in creating modern, responsive web applications tailored to your unique needs
+            From data modeling to predictive analytics — delivering end-to-end solutions that turn complex data into strategic business value
           </p>
         </div>
 
@@ -40,18 +40,17 @@ const Services = () => {
             <div className="relative z-10">
               {/* Service Icon */}
               <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-primary flex items-center justify-center">
-                <Code className="w-10 h-10 text-white" />
+                <Database className="w-10 h-10 text-white" />
               </div>
 
               {/* Service Title */}
               <h3 className="text-3xl font-bold mb-4">
-                Freelance Web Development
+                Data Analytics & Business Intelligence
               </h3>
 
               {/* Service Description */}
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Personalized website development tailored to individual or business needs with specific features and modern design. 
-                From concept to deployment, I deliver high-quality web solutions that drive results.
+                End-to-end data solutions from database modeling to predictive analytics. I design data architectures, build automated dashboards, and develop ML models that drive measurable business impact — from 15% efficiency gains to 60% time savings.
               </p>
 
               {/* Features Grid */}
@@ -72,14 +71,14 @@ const Services = () => {
                   onClick={() => scrollToSection("projects")}
                   className="gradient-primary text-primary-foreground font-semibold px-8 py-3 glow hover:glow-lg transition-smooth"
                 >
-                  View My Work
+                  View My Projects
                 </Button>
                 <Button
                   variant="outline"
                   onClick={() => scrollToSection("contact")}
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3"
                 >
-                  Get Started
+                  Contact Me
                 </Button>
               </div>
             </div>
