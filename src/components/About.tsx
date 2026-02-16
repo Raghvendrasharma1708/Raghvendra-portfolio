@@ -27,6 +27,14 @@ const About = () => {
       period: "Sep 2024–Dec 2024",
       icon: Building,
     },
+    {
+      company: "Greatbear Yatra",
+      location: "Jaipur",
+      role: "Data Analyst Intern",
+      type: "On-site",
+      period: "May 2024 - Aug 2024",
+      icon: Building,
+    },
   ];
 
   return (
