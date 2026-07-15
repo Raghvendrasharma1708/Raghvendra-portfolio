@@ -3,10 +3,19 @@ import { Calendar, MapPin, Building } from "lucide-react";
 
 const About = () => {
   const experiences = [
+
+{
+      company: "Optisoft Business Solutions Pvt. Ltd.",
+      location: "Jaipur",
+      role: "Data Science Intern",
+      type: "Hybrid",
+      period: "Jan–July 2026",
+      icon: Building,
+    },
     {
       company: "iSkylar Technologies",
       location: "Jaipur",
-      role: "Business Analytics Intern",
+      role: "Data Analytics Intern",
       type: "On-site",
       period: "June–Aug 2025",
       icon: Building,
