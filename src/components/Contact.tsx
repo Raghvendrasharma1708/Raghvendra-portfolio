@@ -33,8 +33,8 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/raghvendra-sharma-2a025a308",
-      href: "https://linkedin.com/in/raghvendra-sharma-2a025a308",
+      value: "https://linkedin.com/in/raghvendra-sharma-ms",
+      href: "https://linkedin.com/in/raghvendra-sharma-ms",
       color: "text-primary"
     },
     {
