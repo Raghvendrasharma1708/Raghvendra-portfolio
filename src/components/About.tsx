@@ -40,7 +40,7 @@ const About = () => {
       company: "Greatbear Yatra",
       location: "Jaipur",
       role: "Data Analyst Intern",
-      type: "On-site",
+      type: "Remote",
       period: "May 2024 - Aug 2024",
       icon: Building,
     },
